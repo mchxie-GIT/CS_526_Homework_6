@@ -1,20 +1,17 @@
-CS526 Homework 6
-
 Running the programs
 
 Keep the three Python files together. Put the input files you want to
-test in the same folder. In PowerShell, run the program you want to test.
+test in the same folder.
 
     Get-Content merge_input1.txt | python problem1.py
     Get-Content heap_input1.txt | python problem2.py
     Get-Content median_input1.txt | python problem3.py
 
-Here is the first command in Bash or Command Prompt.
+Here is the first command in Bash.
 
     python problem1.py < merge_input1.txt
 
-Problem 1 - Merge the register logs
-
+Problem 1:
 I use the min-heap from Problem 2 as the priority queue. I start by
 putting the first sale from each nonempty register into the heap. An
 entry holds the sale time, register number, and index in that log.
@@ -29,8 +26,8 @@ next. The heap holds at most one sale from each register.
 With k registers and N sales, this takes O(k + N log(k + 1)) time.
 The queue uses O(k) extra space.
 
-Problem 2 - Linked min-heap
 
+Problem 2:
 Each node has links to its parent, left child, and right child. To find a
 position, I skip the first 1 in its binary number. A 0 then means left
 and a 1 means right. For example, position 6 is 110, so I go right,
@@ -43,8 +40,8 @@ down as needed. The build method links all the nodes and fixes the
 heap from the bottom up. The heap_sort method removes the values from
 a copy of the heap, smallest first.
 
-Problem 3 - Running median
 
+Problem 3:
 I use two min-heaps from Problem 2. The upper heap stores the
 larger sales and gives me the smallest one at its root. The lower heap
 stores the smaller sales as negatives. With 3 and 8 in the lower half,

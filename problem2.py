@@ -1,7 +1,6 @@
 from ast import literal_eval
 import sys
 
-
 class Node:
     def __init__(self, value, parent=None):
         self.value = value
@@ -23,7 +22,7 @@ class MinHeap:
 
     def _node_at(self, position):
         node = self.root
-        # Skip the 0b prefix and the leading 1, which represents the root.
+        #Skip the 0b prefix and the leading 1, which represents the root
         for direction in bin(position)[3:]:
             if direction == "0":
                 node = node.left
@@ -104,7 +103,7 @@ class MinHeap:
         return True
 
     def build(self, values):
-        # Finish both subtrees before sifting their parent down.
+        #Finish both subtrees before sifting their parent down
         def build_subtree(position, parent):
             if position > len(values):
                 return None
@@ -138,7 +137,7 @@ class MinHeap:
         if self.is_empty():
             return
 
-        # Assign columns in inorder and use every other row for the branches.
+        #Assign columns in inorder and use every other row for the branches
         rows = ["" for _ in range(2 * self._size.bit_length() - 1)]
         column = 0
 

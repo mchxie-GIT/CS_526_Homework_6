@@ -3,9 +3,8 @@ import sys
 
 from problem2 import MinHeap
 
-
 def running_medians(sales):
-    lower = MinHeap()  # Store negative values so its root gives the largest sale.
+    lower = MinHeap()  #Store negative values so its root gives the largest sale
     upper = MinHeap()
     medians = []
 
